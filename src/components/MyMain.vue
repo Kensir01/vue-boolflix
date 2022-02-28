@@ -1,12 +1,21 @@
 <template>
     <main>
-        
+        <FilmList :films='films'/>
     </main>
 </template>
 
 <script>
-export default {
+
+    import FilmList from './FilmList.vue';
+
+    export default {
     name: 'MyMain',
+    props: {
+        'films': Array
+    },
+    components: {
+        FilmList
+    }
 }
 </script>
 
