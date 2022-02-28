@@ -19,16 +19,24 @@ export default {
   },
   data() {
     return{
-      films: []
+      films: [],
+      api_key: '9b07ec6dbfbbc8bbc8e1dc63c15c61b7',
+      language: 'it-IT'
     }
   },
   methods: {
     getFilms(keyword) {
 
-      console.log(keyword)
+      const params ={
+        params: {
+          'api_key': this.api_key,
+          'query': keyword,
+          'language' : this.language
+        }
+      };
 
 
-      axios.get(`https://api.themoviedb.org/3/search/movie?api_key=9b07ec6dbfbbc8bbc8e1dc63c15c61b7&query=${keyword}&language=it-IT`)
+      axios.get('https://api.themoviedb.org/3/search/movie/', params )
       .then((response) => {
         this.films = response.data.results;
       })
