@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <MyHeader @search='getFilms' />
-    <MyMain :films="films"/>
+    <MyHeader @search='doSearch' />
+    <MyMain :films="films" :series="series" />
   </div>
 </template>
 
@@ -20,14 +20,17 @@ export default {
   data() {
     return{
       films: [],
+      series: [],
+      results: [],
       api_key: '9b07ec6dbfbbc8bbc8e1dc63c15c61b7',
       language: 'it-IT'
     }
   },
   methods: {
-    getFilms(keyword) {
 
-      const params ={
+    doSearch(keyword) {
+      
+      const parametri ={
         params: {
           'api_key': this.api_key,
           'query': keyword,
@@ -35,6 +38,13 @@ export default {
         }
       };
 
+      this.getFilms(parametri);
+      this.getTv(parametri);
+
+
+    },
+
+    getFilms(params) {
 
       axios.get('https://api.themoviedb.org/3/search/movie/', params )
       .then((response) => {
@@ -43,9 +53,19 @@ export default {
       .catch(function (error) {
         // handle error
         console.log(error);
+      });
+    },
+    
+    getTv(params) {
+
+      axios.get('https://api.themoviedb.org/3/search/tv/', params )
+      .then((response) => {
+        this.series = response.data.results;
+
       })
-      .then(function () {
-        // always executed
+      .catch(function (error) {
+        // handle error
+        console.log(error);
       });
     }
   }
