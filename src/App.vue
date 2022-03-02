@@ -82,4 +82,17 @@ export default {
 //   color: #2c3e50;
 //   margin-top: 60px;
 // }
+
+  @import "./assets/style/generali.scss";
+  @import "./assets/style/variabili.scss";
+
+  main {
+    background-color: $mainBg;
+    height: calc(100vh - 70px);
+    overflow-y: auto;
+
+    .loader-title {
+      margin-top: 100px;
+    }
+  }
 </style>
