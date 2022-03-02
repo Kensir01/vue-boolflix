@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+
     <MyHeader @search='doSearch' />
     <MyMain :films="films" :series="series" />
   </div>
