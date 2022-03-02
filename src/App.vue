@@ -1,8 +1,12 @@
 <template>
   <div id="app">
-
     <MyHeader @search='doSearch' />
-    <MyMain :films="films" :series="series" />
+    <main class=" text-center text-white">
+      <div class="container">
+        <MyMain :films="films" :series="series" />  
+      </div>
+    </main>
+
   </div>
 </template>
 
@@ -83,8 +87,5 @@ export default {
     height: calc(100vh - 70px);
     overflow-y: auto;
 
-    .loader-title {
-      margin-top: 100px;
-    }
   }
 </style>

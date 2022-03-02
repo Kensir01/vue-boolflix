@@ -80,13 +80,11 @@ export default {
 @import "../../assets/style/variabili.scss";
 @import "../../assets/style/generali.scss";
 
-    li {
-        list-style: none;
-    }
 
     .cards {
         height: 300px;
         margin: 20px 0px;
+        display: inline-block;
 
 
         .card {
@@ -97,6 +95,7 @@ export default {
 
         .content {
             height: 100%;
+            width: 60%;
             background-repeat: no-repeat;
             background-size: contain;
             background-position: center;

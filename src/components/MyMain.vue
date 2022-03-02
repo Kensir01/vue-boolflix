@@ -1,7 +1,9 @@
 <template>
     <main>
-        <FilmList :films='films'/>
-        <SeriesList :series='series'/>
+        <div class="container">
+            <FilmList :films='films'/>
+            <SeriesList :series='series'/>
+        </div>
     </main>
 </template>
 
@@ -23,7 +25,12 @@
     }
 }
 </script>
+<style scoped lang="scss">
 
-<style>
+    @import "../assets/style/variabili.scss";
+
+    ul {
+        padding-top: 20px;
+    }
 
 </style>

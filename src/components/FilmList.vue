@@ -23,6 +23,25 @@ export default {
 }
 </script>
 
-<style>
+<style scoped lang="scss">
+    @import "../assets/style/variabili.scss";
+    @import "../assets/style/generali.scss";
+
+    h2 {
+        font-size: 25px;
+        margin-bottom: 30px;
+        text-align: left;
+    }
+
+    ul {
+        list-style: none;
+        justify-content: center;
+        padding-left: 0px;
+    }
+
+    img {
+        width: 50px;
+        height: 30px;
+    }
 
 </style>
